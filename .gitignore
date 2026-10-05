@@ -1,0 +1,5 @@
+.env
+whatsapp_session/
+data/
+logs/
+__pycache__/

@@ -1,0 +1,11 @@
+[Unit]
+Description=ABI hearing WhatsApp reminders
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+Environment=HEADLESS=true
+# The folder name has a space, so cd into it through bash with quotes.
+ExecStart=/bin/bash -c 'cd "/root/client hearings" && exec venv/bin/python send_reminders.py'
+TimeoutStartSec=1h
